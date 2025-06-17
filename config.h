@@ -1,4 +1,5 @@
-/* user and group to drop privileges to */ static const char *user  = "nobody";
+/* user and group to drop privileges to */
+static const char *user  = "nobody";
 static const char *group = "nogroup";
 /*Font settings for the time text*/
 static const float textsize=64.0;
