@@ -1,0 +1,30 @@
+--- slock.c
++++ slock.c
+@@ -20,6 +21,7 @@
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include <X11/XKBlib.h>
++#include <X11/Xresource.h>
+ 
+ #include "arg.h"
+ #include "util.h"
+@@ -47,6 +49,19 @@ struct xrandr {
+ 	int errbase;
+ };
+ 
++/* Xresources preferences */
++enum resource_type {
++	STRING = 0,
++	INTEGER = 1,
++	FLOAT = 2
++};
++
++typedef struct {
++	char *name;
++	enum resource_type type;
++	void *dst;
++} ResourcePref;
++
+ #include "config.h"
+ 
+ static void

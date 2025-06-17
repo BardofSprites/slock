@@ -3,7 +3,7 @@ static const char *user  = "nobody";
 static const char *group = "nogroup";
 /*Font settings for the time text*/
 static const float textsize=64.0;
-static const char* textfamily="serif";
+static const char* textfamily="Iosevka Comfy";
 static const double textcolorred=255;
 static const double textcolorgreen=255;
 static const double textcolorblue=255;
@@ -16,3 +16,12 @@ static const char *colorname[NUMCOLS] = {
 
 /* treat a cleared input like a wrong password (color) */
 static const int failonclear = 1;
+
+/*
+ * Xresources preferences to load at startup
+ */
+ResourcePref resources[] = {
+        { "color0",       STRING,  &colorname[INIT] },
+        { "color8",       STRING,  &colorname[INPUT] },
+        { "color1",       STRING,  &colorname[FAILED] },
+};
